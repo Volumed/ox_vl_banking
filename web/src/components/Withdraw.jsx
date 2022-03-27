@@ -39,7 +39,7 @@ const Withdraw = ({ balance, setBalance, money, setMoney }) => {
         duration: 6000,
         isClosable: false,
       });
-      fetchNui("ox_vl_banking:withdraw", 0, nrInput)
+      fetchNui("vl_banking:withdraw", 0, nrInput)
       onClose(true);
 
       newBalance = balance - nrInput;

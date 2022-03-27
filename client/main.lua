@@ -8,7 +8,7 @@ local ATMProps = {
 }
 
 local OpenBank = function()
-	lib.callback('ox_vl_banking:getData', 1000, function(data)
+	lib.callback('vl_banking:getData', 1000, function(data)
 		SetNuiFocus(true, true)
 		SendNUIMessage({
 			type = 'open',

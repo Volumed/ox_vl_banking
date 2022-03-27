@@ -36,7 +36,7 @@ const App = () => {
 
   useEffect(() => {
     if (!isOpen) {
-      fetchNui("ox_vl_banking:close", 0, 0)
+      fetchNui("vl_banking:close", 0, 0)
     }
   }, [isOpen]);
 

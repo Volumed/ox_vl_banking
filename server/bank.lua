@@ -1,7 +1,7 @@
 local ox_inventory = exports.ox_inventory
 
 local function provideExport(exportName, func)
-	AddEventHandler(('__cfx_export_ox_vl_banking_%s'):format(exportName), function(setCB)
+	AddEventHandler(('__cfx_export_vl_banking_%s'):format(exportName), function(setCB)
 		setCB(func)
 	end)
 end

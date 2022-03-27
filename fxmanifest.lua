@@ -5,7 +5,7 @@ lua54        'yes'
 game         'gta5'
 
 --[[ Resource Information ]]--
-name         'ox_vl_banking'
+name         'vl_banking'
 author       'Volumed'
 version      '0.0.1'
 repository   ''

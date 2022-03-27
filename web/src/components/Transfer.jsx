@@ -41,7 +41,7 @@ const Transfer = ({ balance, setBalance, players }) => {
           duration: 6000,
           isClosable: false,
         });
-        fetchNui("ox_vl_banking:transfer", nrPlayerId, nrInput)
+        fetchNui("vl_banking:transfer", nrPlayerId, nrInput)
         onClose(true);
 
         newBalance = balance - nrInput;
