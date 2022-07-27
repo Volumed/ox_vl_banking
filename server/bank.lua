@@ -20,11 +20,11 @@ function deposit(source, amount)
     if source == nil or source == '' then return end
 	if checkAmount(amount) then
 		local money = ox_inventory:Search(source, 2, 'money')
-        if money and type(money) == 'number' then
-            if money >= amount then
-                ox_inventory:RemoveItem(source, 'money', amount)
-                exports.ox_accounts:add(source, 'bank', amount)
-            end
+
+        if money and money >= amount then
+            local accounts = Ox.GetPlayer(source).getAccounts()
+            accounts.add('fleeca', amount)
+            ox_inventory:RemoveItem(source, 'money', amount)
         end
 	else
         print(GetPlayerName(source) .. ' is sketchy')
@@ -37,12 +37,12 @@ provideExport('deposit', deposit)
 function withdraw(source, amount)
     if source == nil or source == '' then return end
 	if checkAmount(amount) then
-		local bank = exports.ox_accounts:get(source, 'bank')
-        if bank and type(bank) == 'number' then
-            if bank >= amount then
-                ox_inventory:AddItem(source, 'money', amount)
-                exports.ox_accounts:remove(source, 'bank', amount)
-            end
+        local accounts = Ox.GetPlayer(source).getAccounts()
+		local fleeca = accounts.get('fleeca')
+
+        if fleeca >= amount then
+            accounts.remove('fleeca', amount)
+            ox_inventory:AddItem(source, 'money', amount)
         end
 	else
         print(GetPlayerName(source) .. ' is sketchy')
@@ -58,12 +58,13 @@ function transfer(source, to, amount)
     local name = GetPlayerName(to)
     if name then
         if checkAmount(amount) then
-            local bank = exports.ox_accounts:get(source, 'bank')
-            if bank and type(bank) == 'number' then
-                if bank >= amount then
-                    exports.ox_accounts:remove(source, 'bank', amount)
-                    exports.ox_accounts:add(to, 'bank', amount)
-                end
+            local accounts = Ox.GetPlayer(source).getAccounts()
+            local fleeca = accounts.get('fleeca')
+
+            if fleeca and fleeca >= amount then
+                local target = Ox.GetPlayer(to).getAccounts()
+                target.add('fleeca', amount)
+                accounts.remove('fleeca', amount)
             end
         else
             print(GetPlayerName(source) .. ' is sketchy')

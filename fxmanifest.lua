@@ -16,6 +16,7 @@ shared_script '@ox_lib/init.lua'
 
 server_scripts {
 	'@oxmysql/lib/MySQL.lua',
+    '@ox_core/imports/server.lua',
     'server/bank.lua',
     'server/main.lua'
 }
