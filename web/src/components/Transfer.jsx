@@ -51,7 +51,7 @@ const Transfer = ({ balance, setBalance, players }) => {
         setPlayerId(1);
       } else {
         toast({
-          title: "You do not have enough money in your account",
+          title: "You do not have enough money to make this transfer",
           status: "error",
           position: "top",
           duration: 6000,

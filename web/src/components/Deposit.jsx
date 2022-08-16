@@ -50,7 +50,7 @@ const Deposit = ({ balance, setBalance, money, setMoney }) => {
       setInput(1);
     } else {
       toast({
-        title: "You do not have enough cash to make a deposit",
+        title: "You do not have enough cash to make this deposit",
         status: "error",
         position: "top",
         duration: 6000,

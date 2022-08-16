@@ -50,7 +50,7 @@ const Withdraw = ({ balance, setBalance, money, setMoney }) => {
       setInput(1);
     } else {
       toast({
-        title: "You do not have enough money in your account",
+        title: "You do not have enough money to make this withdraw",
         status: "error",
         position: "top",
         duration: 6000,
