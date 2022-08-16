@@ -38,6 +38,7 @@ const Transfer = ({ balance, setBalance, players }) => {
         toast({
           title: "You have successfully transferred ${nrInput} to player ID: ${nrPlayerId}",
           status: "success",
+          position: "top",
           duration: 6000,
           isClosable: false,
         });
@@ -52,6 +53,7 @@ const Transfer = ({ balance, setBalance, players }) => {
         toast({
           title: "You do not have enough money in your account",
           status: "error",
+          position: "top",
           duration: 6000,
           isClosable: false,
         });
@@ -60,6 +62,7 @@ const Transfer = ({ balance, setBalance, players }) => {
       toast({
         title: "Player with ID: ${nrPlayerId} has not been found",
         status: "error",
+        position: "top",
         duration: 6000,
         isClosable: false,
       });

@@ -36,6 +36,7 @@ const Withdraw = ({ balance, setBalance, money, setMoney }) => {
       toast({
         title: "You have successfully made a withdrawel of ${nrInput}",
         status: "success",
+        position: "top",
         duration: 6000,
         isClosable: false,
       });
@@ -51,6 +52,7 @@ const Withdraw = ({ balance, setBalance, money, setMoney }) => {
       toast({
         title: "You do not have enough money in your account",
         status: "error",
+        position: "top",
         duration: 6000,
         isClosable: false,
       });
