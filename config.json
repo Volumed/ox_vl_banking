@@ -1,6 +1,13 @@
 {
-	"target": {
-		"ox_target": false,
-		"qtarget": true,
-	}
+  "atmprops": {
+    "props": [
+      -870868698,
+      -1126237515,
+      506770882
+     ]
+  },
+  "target": {
+    "ox_target": false,
+    "qtarget": true
+  }
 }
