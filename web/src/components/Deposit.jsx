@@ -34,7 +34,7 @@ const Deposit = ({ balance, setBalance, money, setMoney }) => {
       let newCash;
 
       toast({
-        title: `Cash money ${nrInput} has been deposited`,
+        title: "You successfully made a deposit of ${nrInput}",
         status: "success",
         duration: 6000,
         isClosable: false,
@@ -49,7 +49,7 @@ const Deposit = ({ balance, setBalance, money, setMoney }) => {
       setInput(1);
     } else {
       toast({
-        title: "Not enough cash money",
+        title: "You do not have enough cash to make a deposit",
         status: "error",
         duration: 6000,
         isClosable: false,

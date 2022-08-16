@@ -36,7 +36,7 @@ const Transfer = ({ balance, setBalance, players }) => {
         let newBalance;
 
         toast({
-          title: `Account balance ${nrInput} allocated to player id ${nrPlayerId}`,
+          title: "You have successfully transferred ${nrInput} to player ID: ${nrPlayerId}",
           status: "success",
           duration: 6000,
           isClosable: false,
@@ -50,7 +50,7 @@ const Transfer = ({ balance, setBalance, players }) => {
         setPlayerId(1);
       } else {
         toast({
-          title: "Not enough account balance",
+          title: "You do not have enough money in your account",
           status: "error",
           duration: 6000,
           isClosable: false,
@@ -58,7 +58,7 @@ const Transfer = ({ balance, setBalance, players }) => {
       }
     } else {
       toast({
-        title: `Player with ID ${nrPlayerId} not found`,
+        title: "Player with ID: ${nrPlayerId} has not been found",
         status: "error",
         duration: 6000,
         isClosable: false,
@@ -80,7 +80,7 @@ const Transfer = ({ balance, setBalance, players }) => {
           <ModalCloseButton />
           <ModalBody pl="6" pr="6">
             <FormControl mb="3">
-              <FormLabel htmlFor="id">Player id</FormLabel>
+              <FormLabel htmlFor="id">Player ID</FormLabel>
               <NumberInput min={1} value={playerId} onChange={setPlayerId}>
                 <NumberInputField id="id" />
                 <NumberInputStepper>
