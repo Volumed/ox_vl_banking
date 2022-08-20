@@ -11,7 +11,7 @@ RegisterNetEvent("openBank", function()
 end)
 
 if config.target.ox_target then
-	exports.ox_target:addGlobalObject({
+	exports.ox_target:addModel(config.atmprops.props, {
 		{
 			icon = "fas fa-credit-card",
 			label = "Open ATM",

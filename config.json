@@ -1,13 +1,16 @@
 {
-  "atmprops": {
-    "props": [
-      -870868698,
-      -1126237515,
-      506770882
-     ]
-  },
-  "target": {
-    "ox_target": false,
-    "qtarget": true
-  }
+	"atmprops": {
+		"props": [
+			"prop_atm_01",
+			"prop_atm_02",
+			"prop_atm_03",
+			"prop_fleeca_atm",
+			"v_5_b_atm1",
+			"v_5_b_atm2"
+		]
+	},
+	"target": {
+		"ox_target": false,
+		"qtarget": true
+	}
 }
