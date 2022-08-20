@@ -34,8 +34,9 @@ const Withdraw = ({ balance, setBalance, money, setMoney }) => {
       let newCash;
 
       toast({
-        title: `Account balance ${nrInput} allocated for cash money`,
+        title: "You have successfully made a withdrawel of ${nrInput}",
         status: "success",
+        position: "top",
         duration: 6000,
         isClosable: false,
       });
@@ -49,8 +50,9 @@ const Withdraw = ({ balance, setBalance, money, setMoney }) => {
       setInput(1);
     } else {
       toast({
-        title: "Not enough account balance",
+        title: "You do not have enough money to make this withdraw",
         status: "error",
+        position: "top",
         duration: 6000,
         isClosable: false,
       });
