@@ -1,6 +1,3 @@
-local oxTarget = GetConvar("ox_enableTarget", "false") == "true"
-local ox_target = exports.ox_target
-
 local ATMProps = {
 	`prop_atm_01`,
 	`prop_atm_02`,
@@ -22,15 +19,14 @@ local function openBank()
 	end)
 end
 
-if oxTarget then
-	ox_target:addModel(ATMProps, {
-		{
-			name = "open_atm",
-			icon = "fas fa-credit-card",
-			label = "Use ATM",
-			onSelect = function()
-				openBank()
-			end,
-		},
-	})
-end
+local ox_target = exports.ox_target
+ox_target:addModel(ATMProps, {
+	{
+		name = "access_account",
+		icon = "fas fa-credit-card",
+		label = "Access ATM",
+		onSelect = function()
+			openBank()
+		end,
+	},
+})
