@@ -1,4 +1,16 @@
-RegisterNetEvent("openBank", function()
+local oxTarget = GetConvar("ox_enableTarget", "false") == "true"
+local ox_target = exports.ox_target
+
+local ATMProps = {
+	`prop_atm_01`,
+	`prop_atm_02`,
+	`prop_atm_03`,
+	`prop_fleeca_atm`,
+	`v_5_b_atm1`,
+	`v_5_b_atm2`
+}
+
+local function openBank()
 	lib.callback("vl_banking:getData", 1000, function(data)
 		SetNuiFocus(true, true)
 		SendNUIMessage({
@@ -8,26 +20,17 @@ RegisterNetEvent("openBank", function()
 			players = json.encode(data.players),
 		})
 	end)
-end)
+end
 
-if config.target.ox_target then
-	exports.ox_target:addModel(config.atmprops.props, {
+if oxTarget then
+	ox_target:addModel(ATMProps, {
 		{
-			icon = "fas fa-credit-card",
-			label = "Open ATM",
-			event = "openBank",
-			canInteract = function(entity, coords, distance)
-				return true
-			end,
-		},
-	})
-elseif config.target.qtarget then
-	exports.qtarget:AddTargetModel(config.atmprops.props, {
-		options = { {
+			name = "open_atm",
 			icon = "fas fa-credit-card",
 			label = "Use ATM",
-			event = "openBank",
-		} },
-		distance = 1.5,
+			onSelect = function()
+				openBank()
+			end,
+		},
 	})
 end
