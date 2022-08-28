@@ -13,23 +13,21 @@ description  'Banking UI'
 
 --[[ Manifest ]]--
 shared_script '@ox_lib/init.lua'
-shared_script 'init.lua'
 
 server_scripts {
-    '@ox_core/imports/server.lua',
-    'server/bank.lua',
-    'server/main.lua'
+	'@ox_core/imports/server.lua',
+	'server/bank.lua',
+	'server/main.lua'
 }
 
 client_scripts {
-    'client/bank.lua',
-    'client/main.lua'
+	'client/bank.lua',
+	'client/main.lua'
 }
 
 ui_page 'web/build/index.html'
 
 files {
-	 'config.json',
-    'web/build/index.html',
-    'web/build/**/*'
+	 'web/build/index.html',
+	 'web/build/**/*'
 }
